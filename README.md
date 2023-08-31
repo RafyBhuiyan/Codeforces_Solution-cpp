@@ -1,1 +1,2 @@
-# Codeforces_Solution\nAuthor -- RAFY BHUIYAN
+# Codeforces_Solution
+Author -- RAFY BHUIYAN
