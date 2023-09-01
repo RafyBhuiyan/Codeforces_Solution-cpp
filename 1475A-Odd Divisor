@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int n,l,t;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        l=log2(n);
+        if((float)l==log2(n))
+            cout<<"NO\n";
+        else
+            cout<<"YES\n";
+    }
+    return 0;
+}
