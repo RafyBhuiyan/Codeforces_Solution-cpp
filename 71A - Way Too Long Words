@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+    int x;
+    char ra[100];
+    scanf("%d",&x);
+    for(int j = 0; j<=x; j++)
+    {
+        gets(ra);
+        int l = strlen(ra);
+        if(l>10)
+        {
+            printf("%c%d%c\n",ra[0],l-2,ra[strlen(ra)-1]);
+        }
+        else printf("%s\n",ra);
+    }
+    return 0;
+}
