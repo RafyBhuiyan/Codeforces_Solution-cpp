@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+ int i,n,h,sum=0;
+ scanf("%d%d",&n,&h);
+ int ra[n-1];
+ for(i=0;i<n;i++){
+    scanf("%d",&ra[i]);
+    if(ra[i]>h){
+        sum+=2;
+    }
+    else{
+        sum+=1;
+    }
+ }
+ printf("%d",sum);
+return 0;
+}
