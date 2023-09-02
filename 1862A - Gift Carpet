@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int a,x,b,i,j,m,n,count=0;
+    char ra[100][20];
+    cin>>x;
+    while(x--)
+    {
+        cin>>a>>b;
+        for(i=0; i<a; i++)
+            cin>>ra[i];
+        for(i=0; i<b; i++)
+        {
+            for(j=0; j<a; j++)
+            {
+                if(count==0 && ra[j][i]=='v')
+                {
+                    count++;
+                    break;
+                }
+                if(count==1 && ra[j][i]=='i')
+                {
+                    count++;
+                    break;
+                }
+                if(count==2 && ra[j][i]=='k')
+                {
+                    count++;
+                    break;
+                }
+                if(count==3 && ra[j][i]=='a')
+                {
+                    count++;
+                    break;
+                }
+            }
+        }
+        if(count==4)
+            cout<< "YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+        count=0;
+    }
+    return 0;
+}
