@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int year,t;
+    cin>>t;
+    while(t--){
+        cin>>year;
+        if(year/2020>=year%2020)
+            cout<<"YES\n";
+        else
+            cout<<"NO\n";
+    }
+    return 0;
+}
