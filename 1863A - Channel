@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,a,i,q,n,p;
+    cin>>t;
+    string ra;
+    while(t--)
+    {
+        cin>>n>>a>>q;
+        cin>>ra;
+        p=a;
+        if(a==n)
+            cout<<"YES\n";
+        else{
+        for(i=0;i<q;i++){
+            if(ra[i]=='+' && a<n){
+                a++;
+                p++;
+                if(a==n)
+                    break;
+                }
+            else if(ra[i]=='-' && a>0)
+                a--;
+        }
+        if(p>=n && a>=n)
+            cout<<"YES\n";
+        else if(p>=n && a<n)
+            cout<<"MAYBE\n";
+        else
+            cout<<"NO\n";
+        }
+    }
+    return 0;
+}
