@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    int x,i,sum=0;
+    scanf("%d",&x);
+    char ra[x][3];
+    for(i=0;i<x;i++){
+        scanf("%s",ra[i]);
+        if(ra[i][1]=='+')
+            sum++;
+        else if(ra[i][1]=='-')
+            sum--;
+    }
+    printf("%d",sum);
+    return 0;
+}
