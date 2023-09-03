@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+    int i,l,sum=1;
+    char a,ra[100];
+    scanf("%s",&ra);
+    a= ra[0];
+    l = strlen(ra);
+    for(i=1;i<l;i++){
+        if(ra[i]==a)
+            sum++;
+        else{
+            sum=1;
+            a=ra[i];
+            }
+        if(sum==7)
+            break;
+    }
+    if(sum==7)
+        printf("YES");
+    else
+        printf("NO");
+    return 0;
+}
