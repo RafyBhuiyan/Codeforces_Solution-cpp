@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string ra,sa="qwertyuiopasdfghjkl;zxcvbnm,./";
+    char x;
+    cin>>x>>ra;
+    int l=ra.length(),a=sa.length(),i,j;
+    for(i=0;i<l;i++){
+        for(j=0;j<a;j++){
+            if(ra[i]==sa[j]){
+                if(x=='R'){
+                    ra[i]=sa[j-1];
+                    break;
+                }
+                else{
+                    ra[i]=sa[j+1];
+                    break;
+                }
+            }
+        }
+    }
+    cout<<ra;
+    return 0;
+}
