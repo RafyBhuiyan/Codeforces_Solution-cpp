@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+    char ra[106];
+    gets(ra);
+    int i,x=1,y=0,l=strlen(ra),sum=0;
+    for(i=0;i<l;i++){
+        if(ra[i]=='A'||ra[i]=='E'||ra[i]=='I'||ra[i]=='O'||ra[i]=='U'||ra[i]=='Y' ){
+            x=1;
+        }
+        else{
+            x++;
+        }
+        if(sum<x)
+        sum=x;
+    }
+    printf("%d",sum);
+    return 0;
+}
