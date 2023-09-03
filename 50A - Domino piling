@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+    int x,y,i,sum=0;
+    scanf("%d%d",&x,&y);
+    for(i=2;i<=x*y;i+=2){
+        sum++;
+    }
+    printf("%d",sum);
+}
