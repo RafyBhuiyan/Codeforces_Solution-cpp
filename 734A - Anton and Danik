@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{   int x,sum=0;
+    scanf("%d",&x);
+    char ra[x-1];
+    scanf("%s",&ra);
+    int l = strlen(ra);
+    for(int i=0; i<l; i++)
+    {   if(ra[i]=='A')
+            sum++;
+    }
+    int sum1=x-sum;
+    if(sum>sum1)
+        printf("Anton");
+    else if(sum==sum1)
+        printf("Friendship");
+    else
+        printf("Danik");
+    return 0;
+}
