@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,i,k;
+    cin>>t;
+    while(t--)
+    {
+        k=0;
+        cin>>n;
+        int ra[n];
+        for(i=0;i<n;i++)
+        {
+            cin>>ra[i];
+            if(i && ra[i-1]>ra[i])
+            {
+                k=max(k,ra[i-1]);
+            }
+        }
+        cout<<k<<endl;
+    }
+    return 0;
+}
