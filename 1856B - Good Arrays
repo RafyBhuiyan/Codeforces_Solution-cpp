@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int t,a,sum,n,b,j=0;
+    cin>>t;
+    while(t--)
+    {
+        j=0;
+        sum=0;
+        cin>>n;
+        b=n;
+        while(b--)
+        {
+            cin>>a;
+            sum+=a;
+            if(a==1)
+                j++;
+        }
+        if(n>1)
+        {
+            if(sum>= n+j)
+                cout<<"YES";
+            else
+                cout<<"NO";
+            cout<<endl;
+        }
+        else
+            cout<<"NO"<<endl;
+    }
+    return 0;
+}
