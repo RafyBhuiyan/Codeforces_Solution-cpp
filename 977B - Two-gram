@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int n,i,j,num=0,sum=0,k=0;
+    string ra;
+    cin>>n>>ra;
+    for(i=0; i<n-1; i++)
+    {
+        sum=0;
+        for(j=i+1; j<n-1; j++)
+        {
+            if(ra[i]==ra[j] && ra[i+1]==ra[j+1])
+                sum++;
+        }
+        if(sum>num)
+        {
+            k=i;
+            num=sum;
+        }
+    }
+    cout<<ra[k]<<ra[k+1];
+    return 0;
+}
