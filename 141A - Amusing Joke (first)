@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int count=0,temp=1,i,j,love=0;
+    string ra,is,sa;
+    cin>>ra >> is >> sa;
+    int l= ra.length();
+    int k= is.length();
+    int m= sa.length();
+    if(m==l+k)
+    {
+        for(i=0; i<m; i++)
+        {
+            if(sa[i]!=0)
+            {
+                for(j=0; j<l; j++)
+                {
+                    if(sa[i]==ra[j])
+                        count++;
+                }
+                for(j=0; j<k; j++)
+                {
+                    if(sa[i]==is[j])
+                        count++;
+                }
+                for(j=0; j<m; j++)
+                {
+                    if(sa[i]==sa[j] && i!=j)
+                    {
+                        temp++;
+                        sa[j]=0;
+                    }
+                }
+                if(count!=temp)
+                {
+                    love=1;
+                    cout<<"NO";
+                    break;
+                }
+                count=0;
+                temp=1;
+            }
+        }
+    }
+    else
+    {
+        love=1;
+        printf("NO");
+    }
+    if(love==0)
+        printf("YES");
+    return 0;
+}
