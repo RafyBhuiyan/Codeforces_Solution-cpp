@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    string ra;
+    cin>>t;
+    while(t--){
+        cin>>ra;
+        if(ra[5]+ra[4]+ra[3]==ra[2]+ra[1]+ra[0])
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+    return 0;
+}
