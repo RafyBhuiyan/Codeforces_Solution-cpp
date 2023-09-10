@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<string.h>
+char ra[200];
+int main()
+{
+    int i,l,s=1;
+    scanf("%s",&ra);
+    l = strlen(ra);
+    if(ra[0]>=97 && ra[0]<=122)
+    {
+        for(i=1; i<l; i++)
+        {
+            if(ra[i]>=97 && ra[i]<=122)
+            {
+                s=0;
+                break;
+            }
+            else
+                s++;
+        }
+    }
+    else
+    {
+        s= -1;
+        for(i=1; i<l; i++)
+        {
+            if(ra[i]>=97 && ra[i]<=122)
+            {
+                s=0;
+                break;
+            }
+            else
+                s=-1;
+        }
+    }
+    if(s>0)
+    {
+        for(i=0; i<l; i++)
+        {
+            if(i==0)
+            {
+                if(ra[i]>=97 && ra[i]<=122)
+                    ra[i]-=32;
+            }
+            else
+            {
+                if(ra[i]<=90 && ra[i]>=65)
+                    ra[i]+=32;
+            }
+        }
+    }
+    else if(s==-1){
+            for(i=0; i<l; i++)
+        {
+                if(ra[i]<=90 && ra[i]>=65)
+                    ra[i]+=32;
+        }
+    }
+    printf("%s",ra);
+    return 0;
+}
