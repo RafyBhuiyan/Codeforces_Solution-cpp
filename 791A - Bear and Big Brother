@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+    int i,x,y;
+    scanf("%d%d",&x,&y);
+    for(i=0;i<=y;i++){
+        if(x>y){
+            printf("%d",i);
+            break;
+        }
+        x*=3;
+        y*=2;
+    }
+    return 0;
+}
