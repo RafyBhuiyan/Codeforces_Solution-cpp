@@ -1,0 +1,29 @@
+#include<stdio.h>
+char ra[100],sa[100];
+int main()
+{
+    scanf("%s%s",ra,sa);
+    int x=0,y=0,l = strlen(ra);
+    for(int i=0; i<l; i++)
+    {
+        if(ra[i]<='Z' && ra[i]>='A')
+            ra[i]+=32;
+        x+=ra[i];
+        if(sa[i]<='Z' && sa[i]>='A')
+            sa[i]+=32;
+        y+=sa[i];
+        if(x>y)
+        {
+            printf("1");
+            break;
+        }
+        else if(x<y)
+        {
+            printf("-1");
+            break;
+        }
+    }
+    if(x==y)
+        printf("0");
+    return 0;
+}
