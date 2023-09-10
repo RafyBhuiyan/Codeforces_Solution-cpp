@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+char ra[100];
+int sa[51];
+int main(){
+    int i,j=0,x,y,l;
+    scanf("%s",&ra);
+    l = strlen(ra);
+    for(i=0;i<l;i++){
+        if(i%2==0){
+        sa[j] = ra[i];
+        j++;
+        }
+    }
+    for(i=0;i<=l/2;i++){
+        for(j=i+1;j<=l/2;j++){
+            if(sa[i]>sa[j]){
+                y=sa[i];
+                sa[i]=sa[j];
+                sa[j]=y;
+            }
+        }
+    }
+    for(i=0;i<= l/2;i++){
+            printf("%d",sa[i]-48);
+            if(i!=l/2)
+                printf("+");
+ 
+    }
+    return 0;
+}
