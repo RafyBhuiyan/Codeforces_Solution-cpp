@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<string.h>
+char ra[1000];
+int main(){
+   scanf("%s",&ra);
+   if(ra[0]>=97 && ra[0]<=122)
+        ra[0]-=32;
+   printf("%s",ra);
+    return 0;
+}
