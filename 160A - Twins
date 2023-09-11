@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    int x,i,j,total=0,sum=0,count=0,k;
+    scanf("%d",&x);
+    int ra[x];
+    for(i=0 ; i<x; i++)
+    {
+        scanf("%d",&ra[i]);
+        sum+=ra[i];
+    }
+    sum/=2;
+    for(i=0;i<x;i++){
+        for(j=i+1;j<x;j++){
+            if(ra[i]>ra[j]){
+                k=ra[i];
+                ra[i]=ra[j];
+                ra[j]=k;
+            }
+        }
+    }
+    for(i=x-1;i>=0;i--){
+        total+=ra[i];
+        count++;
+        if(total>sum)
+            break;
+    }
+    printf("%d",count);
+    return 0;
+}
