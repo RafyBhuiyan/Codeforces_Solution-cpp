@@ -1,0 +1,49 @@
+#include<stdio.h>
+int is[2500000];
+int main()
+{
+    int i,x,y,sum=0,j,k=10000000001;
+    scanf("%d",&x);
+    int ra[x];
+    for(i=0; i<x; i++)
+    {
+        scanf("%d",&y);
+        for(j=0; j<y; j++)
+        {
+            scanf("%d",&is[j]);
+            if(is[j]%2!=0)
+            {
+                if(k>is[j])
+                    k=is[j];
+                sum++;
+            }
+        }
+        if(sum==y || sum==0)
+        {
+            ra[i]=1;
+        }
+        else
+        {
+            for(j=0; j<y; j++)
+            {
+                if(is[j]%2==0 && k>is[j])
+                {
+                    ra[i]=0;
+                    break;
+                }
+                else
+                    ra[i]=1;
+            }
+        }
+        sum=0;
+        k=1000000001;
+    }
+    for(i=0; i<x; i++)
+    {
+        if(ra[i])
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+    return 0;
+}
