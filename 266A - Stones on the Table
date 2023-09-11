@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<string.h>
+char ra[1000];
+int main()
+{
+    int x,i,sum=0;
+    scanf("%d",&x);
+    scanf("%s",&ra);
+    for(i=0 ; i<x; i++)
+    {
+        if(ra[i]==ra[i+1])
+            sum++;
+    }
+    printf("%d",sum);
+    return 0;
+}
