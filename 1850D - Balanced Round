@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int ra[1000000];
+int main()
+{
+    int p,x,k,y,i,j,sum1=1,sum2=1,m,ans;
+    scanf("%d",&k);
+    
+    while(k--){
+        scanf("%d%d",&x,&y);
+ 
+        for(i=0;i<x;i++)
+        {
+            scanf("%d",&ra[i]);
+        }
+        sort(ra,ra+x);
+        for(i=1; i<x; i++)
+        {
+            if(ra[i]-ra[i-1]<=y && ra[i]!=0 && ra[i-1]!=0)
+                sum1++ ;
+            else if(ra[i]-ra[i-1]>y && ra[i]!=0 && ra[i-1]!=0)
+                sum1=1;
+            if(sum1>sum2){
+                sum2=sum1;}
+        }
+        ans=x-sum2;
+        sum1=1;
+        sum2=1;
+        printf("%d\n",ans);
+    }
+    return 0;
+}
