@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int i,a,b,sum=0,pass=0;
+    cin>> i;
+    while(i--){
+        cin>>a>>b;
+        pass-=(a-b);
+        if(pass>sum)
+            sum=pass;
+    }
+    cout<< sum;
+    return 0;
+}
