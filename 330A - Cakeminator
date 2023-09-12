@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int r,c;
+    cin >> r >> c;
+    char arr[r][c];
+ 
+    for (int i=0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+            cin >> arr[i][j];
+    }
+ 
+    int countr = 0;
+    int sumr = 0, sumc = 0;
+ 
+    for(int i=0; i<r; i++)
+    {
+        int checkr = 0;
+        for(int j=0; j<c; j++)
+        {
+            if(arr[i][j] == 'S')
+            {
+                checkr = 1;
+            }
+ 
+        }
+ 
+        if(checkr == 0)
+        {
+            countr++;
+            sumr += c;
+        }
+    }
+ 
+ 
+    for(int i=0; i<c; i++)
+    {
+        int checkc = 0;
+        for(int j=0; j<r; j++)
+        {
+            if(arr[j][i] == 'S')
+            {
+ 
+                checkc = 1;
+            }
+ 
+        }
+ 
+        if(checkc == 0)
+        {
+            sumc += (r - countr);
+        }
+    }
+ 
+    int ans =  sumc + sumr;
+ 
+    cout<< ans <<endl;
+ 
+    return 0;
+}
