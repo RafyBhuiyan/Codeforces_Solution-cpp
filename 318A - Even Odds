@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    long long int n,k,sum;
+    cin>> n >> k;
+    n++;
+    if(k<=n/2)
+        sum= k*2 -1;
+    else
+        sum = (k-(n/2))*2;
+   cout<< sum;
+    return 0;
+}
