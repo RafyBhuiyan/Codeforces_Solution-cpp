@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int ra,sum=0,a=0,i=0;
+    cin>> ra;
+    while(ra){
+ 
+        if(ra%10>4 && ra%10!=9)
+            a=9-(ra%10);
+        else{
+            a=ra%10;
+            if(ra/10!=0 && ra%10==9)
+                a=0;
+            }
+        sum += a*pow(10,i++);
+        ra/=10;
+    }
+    cout<< sum;
+    return 0;
+}
