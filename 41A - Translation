@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+char ra[100],sa[100];
+int main()
+{
+    int i,sum=0;
+    scanf("%s %s",&ra,&sa);
+    int l = strlen(ra);
+    for(i=0;i<l;i++){
+        if(ra[i]!=sa[l-i-1])
+            sum++;
+    }
+    if(sum==0)
+        printf("YES");
+    else
+        printf("NO");
+    return 0;
+}
