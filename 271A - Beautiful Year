@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int y;
+    cin>> y;
+ 
+    while(1){
+            y++;
+            if((y/1000)!=y%10 && (y/1000)!=(y/10)%10 && y/1000 != (y/100)%10 && (y/100)%10 != (y/10)%10 && (y/100)%10 != y%10 && (y/10)%10 != y%10)
+            break;
+        }
+    cout<< y;
+    return 0;
+}
