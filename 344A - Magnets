@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int p,num1,num2=0,c=0,shu=0;
+    cin>> p;
+    while(p--){
+      cin>> num1;
+      if(num1 != num2)
+        c++;
+        num2=num1;
+    }
+    cout<< c;
+    return 0;
+}
