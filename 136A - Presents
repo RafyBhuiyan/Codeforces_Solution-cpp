@@ -1,0 +1,21 @@
+#include<bits//stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int a,i,j,k;
+    cin>> a;
+    int ra[a],sa[a];
+    for(i=0; i<a; i++)
+        cin>> ra[i];
+ 
+    for(i=0; i<a; i++)
+    {
+        sa[ra[i]-1]=i+1;
+    }
+    for(i=0; i<a; i++)
+    {
+        printf("%d\t",sa[i]);
+    }
+    return 0;
+}
