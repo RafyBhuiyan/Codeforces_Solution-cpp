@@ -8,6 +8,6 @@ int main(){
         sum=num/2;
     else
         sum=-1*((num/2) +1);
-        printf("%lld",sum);
+    printf("%lld",sum);
     return 0;
 }
