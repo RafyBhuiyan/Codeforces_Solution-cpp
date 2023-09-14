@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int round,m,n,frnd,x,y,x1,y1;
+    cin>> round;
+    while(round--){
+        cin>> m >> n >> frnd >> x >> y;
+        int count=0;
+        while(frnd--){
+            cin>> x1>>y1;
+            if((abs(x-x1) + abs(y-y1))%2==0)
+                count=1;
+        }
+        if(count==0)
+            cout<< "YES\n";
+        else
+            cout<< "NO\n";
+    }
+    return 0;
+}
