@@ -1,0 +1,17 @@
+#include<bits//stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int a,i=0,b;
+    float num,sum;
+    cin>> a;
+    num=a;
+    while(a--){
+        cin>> b;
+        i+=b;
+    }
+    sum = i/num;
+    printf("%0.6f",sum);
+    return 0;
+}
