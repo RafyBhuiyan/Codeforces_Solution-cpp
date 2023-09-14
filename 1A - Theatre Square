@@ -1,0 +1,14 @@
+#include<bits//stdc++.h>
+using namespace std;
+int main(){
+    long long int x,y,a,m,n;
+    cin>> x>>y>>a;
+    m=x/a;
+    n=y/a;
+    if(x%a!=0)
+        m++;
+    if(y%a!=0)
+        n++;
+    cout<< m*n;
+    return 0;
+}
