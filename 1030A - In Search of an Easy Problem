@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int p,num;
+    cin>> p;
+    while(p--){
+        cin>> num;
+        if(num==1){
+            cout<< "HARD";
+            break;
+        }
+        if(p==0 && num==0){
+            cout<<"EASY";
+        }
+    }
+    return 0;
+}
