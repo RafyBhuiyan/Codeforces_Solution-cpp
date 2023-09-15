@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int x,a,total,count,i,num;
+    cin>>x;
+    while(x--){
+        total=0;
+        count=0;
+        cin>>a;
+        for(i=0;i<a;i++){
+            cin>>num;
+            total+=num;
+        }
+        if(total==a)
+            cout<<"0"<<endl;
+        else if(total>a)
+            cout<<total-a<<endl;
+        if(total<a)\
+            cout<<"1"<<endl;
+    }
+}
