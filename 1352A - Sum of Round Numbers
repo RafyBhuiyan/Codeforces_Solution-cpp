@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int r,num,i,l=0,num1,a,j=0;
+    cin>> r;
+    while(r--)
+    {
+        cin>> num;
+        num1=num;
+        while(num1){
+            l++;
+            if(num1%10!=0)
+                j++;
+            num1/=10;
+        }
+        cout<< j<< endl;
+        for(i=0;i<l;i++){
+            a=num%10;
+            if(a!=0)
+                cout<<a*pow(10,i)<<" ";
+            num/=10;
+        }
+        cout<<endl;
+        l=0;
+        j=0;
+    }
+    return 0;
+}
