@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int a,k,ra,count=0;
+    cin>> ra;
+    while(ra--)
+    {
+        cin >>a>>k;
+        while(a)
+        {
+            if(a%k==0)
+            {
+                a/=k;
+                count++;
+            }
+            else
+            {
+                count+=(a%k);
+                a-=(a%k);
+            }
+        }
+        cout<< count<<endl;
+        count=0;
+    }
+    return 0;
+}
