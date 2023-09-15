@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int n,i,sa=0,is=0,sum;
+    cin>> n;
+    string ra;
+    cin>> ra;
+    for(i=0; i<n; i++)
+    {
+        if(ra[i]=='0')
+            sa++;
+        else
+            is++;
+    }
+    if(sa>is)
+        sum = sa-is;
+    else
+        sum=is-sa;
+    printf("%d",sum);
+    return 0;
+}
