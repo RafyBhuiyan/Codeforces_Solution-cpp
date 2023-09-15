@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main(){
+    int ra[26],x,i;
+    string is;
+    cin>> x >> is;
+    for(i=0;i<26;i++)
+        ra[i]=1;
+    for(int i=0;i<x;i++){
+        if(is[i]>='a' && is[i]<='z')
+            ra[is[i]-'a']=0;
+        else
+            ra[is[i]-'A']=0;
+    }
+    for(i=0;i<26;i++)
+        if(ra[i]==1){
+                cout<< "NO";
+                break;
+        }
+        else if(i==25 && ra[i]==0)
+            cout<<"YES";
+    return 0;
+}
