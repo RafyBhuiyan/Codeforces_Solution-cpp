@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int ra[1000],i,j=2,a;
+    ra[0]=1;
+    for(i=1;i<1000;i++){
+        while(j%3==0 || j%10==3)
+            j++;
+        ra[i]=j;
+        j++;
+    }
+    cin>>j;
+    while(j--){
+        cin>> a;
+        cout<< ra[a-1] << endl;
+    }
+    return 0;
+}
