@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,x,y,num,temp=0;
+    cin>>n;
+    cin>>x;
+    int ra[n];
+    for(int i=0;i<x;i++){
+        cin>>num;
+        ra[num-1]=101;
+        }
+    cin>>y;
+     for(int i=0;i<y;i++){
+        cin>>num;
+        ra[num-1]=101;
+        }
+    for(int i=0;i<n;i++)
+    if(ra[i]!=101){
+        temp++;
+        break;
+    }
+    if(temp==0)
+        printf("I become the guy.");
+    else
+        printf("Oh, my keyboard!");
+    return 0;
+}
