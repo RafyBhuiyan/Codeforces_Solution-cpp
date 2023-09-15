@@ -1,0 +1,16 @@
+#include<bits//stdc++.h>
+using namespace std;
+int main(){
+    int r,x,y;
+    cin>>r;
+    while(r--){
+        cin>>x>>y;
+        if(x%y==0)
+            printf("0\n");
+        else{
+            int div = (x/y)+1;
+            printf("%d\n",(y*div)-x);
+        }
+    }
+    return 0;
+}
