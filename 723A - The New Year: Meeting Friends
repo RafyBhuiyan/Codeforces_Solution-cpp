@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int x,y,z,max,mi,point,i,mid,a,data;
+    cin>>x>>y>>z;
+    if(x<=y && x<=z)
+    {
+        mi=x;
+        if(y<z)
+        {
+            max=z;
+            mid=y;
+        }
+        else
+        {
+            max=y;
+            mid=z;
+        }
+    }
+    else if(z<=x&&z<=y)
+    {
+        mi=z;
+        if(x>y)
+        {
+            max=x;
+            mid=y;
+        }
+        else
+        {
+            max=y;
+            mid=x;
+        }
+    }
+    else
+    {
+        mi=y;
+        if(x>z)
+        {
+            max=x;
+            mid=z;
+        }
+        else
+        {
+            max=z;
+            mid=x;
+        }
+    }
+    point=(max+mi)/2;
+    if(point>mid){
+        z=mid;
+        point=mid;
+        mid=z;
+    }
+    data=max-mi;
+    for(i=point;i<=mid;i++){
+        data=min(data,abs(point-max)+abs(point-mi)+abs(point-i));
+        }
+    cout<<data;
+    return 0;
+}
