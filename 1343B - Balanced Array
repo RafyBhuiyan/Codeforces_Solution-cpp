@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int x,a,sum=0,i,sum1=0;
+    cin>>x;
+    while(x--)
+    {
+        cin>>a;
+        if((a/2)%2!=0)
+        {
+            cout<< "NO\n";
+        }
+        else
+        {
+            cout<< "YES\n";
+            for(i=2;i<=a;i+=2){
+                    sum+=i;
+                cout<< i<<" ";
+                }
+            for(i=1;i<a-2;i+=2){
+                sum1+=i;
+                cout<<i<<" ";
+            }
+ 
+            cout<< sum-sum1<<endl;
+        } 
+        sum=0;
+        sum1=0;
+    }
+    return 0;
+}
