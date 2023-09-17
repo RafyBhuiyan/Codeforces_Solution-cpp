@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,sum=0,x,j;
+    scanf("%d",&x);
+    int ra[x][2];
+    for(i=0;i<x;i++){
+        for(j=0;j<2;j++){
+            scanf("%d",&ra[i][j]);
+        }
+    }
+    for(i=0;i<x;i++){
+        for(j=0;j<x;j++){
+            if(ra[i][0]==ra[j][1]){
+                sum++;
+            }
+        }
+    }
+    cout<<sum;
+    return 0;
+}
