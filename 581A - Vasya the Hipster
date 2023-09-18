@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int x,y;
+    cin>>x>>y;
+    int dif = min(x,y);
+    int sin = max(x,y);
+    cout<< dif <<" "<<(sin-dif)/2;
+    return 0;
+}
