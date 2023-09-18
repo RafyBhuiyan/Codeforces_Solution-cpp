@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int ra[50],t,i,j,a,count;
+    cin>>t;
+    while(t--)
+    {
+        count=0;
+        cin>>a;
+        for(i=0;i<a;i++)
+            cin>> ra[i];
+        sort(ra,ra+a);
+        for(i=0;i<a-1;i++){
+            if(ra[i+1]-ra[i]<=1)
+                ra[i]=-1;
+            if(ra[i]>=0)
+                count++;
+        }
+        if(count==0)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+    return 0;
+}
