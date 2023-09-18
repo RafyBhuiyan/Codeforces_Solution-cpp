@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int ra[4],i,m=0;
+    for(i=0;i<4;i++){
+        cin>>ra[i];
+        m=max(m,ra[i]);
+    }
+    for(i=0;i<4;i++)
+        if(m!=ra[i])
+            cout<<m-ra[i]<<" ";
+    return 0;
+}
