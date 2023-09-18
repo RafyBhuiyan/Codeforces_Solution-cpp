@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int x,y,n,t,dif,i,num,r,r1;
+    cin>>t;
+    int ra[1000];
+    while(t--)
+    {
+        cin>>x>>y>>n;
+        dif=y-x;
+        r=(n*(n-1))/2;
+        r1=((n-1)*(n-2))/2;
+        if(y-x < r)
+            printf("-1\n");
+        else
+        {
+            cout<<x<<"\t";
+            for(i=n-1; i>1; i--){
+                if(i==n-1)
+                    x+=(dif-r1);
+                else
+                x+=i;
+                cout<<x<<"\t";}
+            cout<< y<<endl;
+        }
+    }
+    return 0;
+}
