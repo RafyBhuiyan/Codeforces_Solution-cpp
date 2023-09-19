@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,i=3,b;
+    cin>>a;
+    if(a%2==0)
+        cout<<"4 "<<a-4;
+    else
+    {
+        while(1){
+            b=3*i;
+            if(a-b>=4){
+                    cout<<b<<" "<<a-b;
+                    break;}
+            i+=2;
+        }
+    }
+    return 0;
+}
