@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,i,num=0,total=0;
+    cin>>t;
+    int ra[t];
+    for(i=0;i<t;i++){
+        cin>>ra[i];
+        num=max(num,ra[i]);
+    }
+    for(i=0;i<t;i++)
+        total+=(num-ra[i]);
+    cout<<total;
+    return 0;
+}
