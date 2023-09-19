@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int l,t;
+    cin>>t;
+    while(t--){
+    string ra;
+    cin>>ra;
+    if((ra[0]=='y' ||ra[0]=='Y')&&(ra[1]=='e' ||ra[1]=='E')&&(ra[2]=='S' ||ra[2]=='s'))
+        cout<<"YES\n";
+    else
+        cout<<"NO\n";
+    }
+    return 0;
+}
