@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,i,j,one=0,two=0,three=0,d,k=0;
+    cin>>n;
+    int ra[n];
+    for(i=0;i<n;i++){
+        cin>>ra[i];
+        if(ra[i]==1)
+            one++;
+        else if(ra[i]==2)
+            two++;
+        else
+            three++;
+        }
+    d=min(min(one,two),three);
+    cout<<d<<endl;
+    while(d--)
+    {
+        k=0;
+        for(i=0;i<n;i++){
+            if(ra[i]==1 && k==0){
+                cout<<i+1<<" ";
+                ra[i]=0;
+                i=-1;
+                k++;
+            }
+            else if(ra[i]==2 && k==1){
+                cout<<i+1<<" ";
+                ra[i]=0;
+                i=-1;
+                k++;
+            }
+            else if(ra[i]==3 && k==2){
+                cout<<i+1<<endl;
+                ra[i]=0;
+                i=-1;
+                k=0;
+                break;
+            }
+        }
+    }
+    return 0;
+}
