@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int l,t,a,m,j;
+    cin>>t;
+    while(t--)
+    {
+        j=3;
+        m=0;
+        cin>>a;
+        while(j--){
+            cin>>l;
+            if(l>a)
+                m++;
+        }
+        cout<<m<<endl;
+    }
+    return 0;
+}
