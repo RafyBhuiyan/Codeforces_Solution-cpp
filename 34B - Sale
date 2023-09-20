@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int m,n,money=0,a,i;
+    cin>>m>>n;
+    int ra[m];
+    for(i=0; i<m; i++)
+        cin>>ra[i];
+    sort(ra,ra+m);
+    for(i=0; i<n; i++)
+    {
+        if(ra[i]<0)
+            money-=ra[i];
+    }
+    cout<<money;
+    return 0;
+}
