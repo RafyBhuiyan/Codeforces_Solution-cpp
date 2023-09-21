@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define br <<"\n";
+using namespace std;
+int main()
+{
+    ll t,n;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        int d,s,k,i,m;
+        m=100000000;
+        for(i=0; i<n; i++)
+        {
+            cin>>d>>s;
+            k=d+(s-1)/2;
+            m=min(k,m);
+        }
+        cout<<m br;
+    }
+    return 0;
+}
