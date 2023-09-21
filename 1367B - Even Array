@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define br <<"\n";
+#define for(i,n) for(i=0;i<n;i++)
+using namespace std;
+int main()
+{
+    int t,x,odd,even,i,a,temp;
+    cin>>t;
+    while(t--)
+    {
+        cin>>x;
+        temp=0;
+        odd=0;
+        even=0;
+        for(i,x)
+        {
+            cin>>a;
+            if(i%2!=a%2)
+            {
+                temp++;
+            }
+            if(a%2!=0) odd++;
+            else even++;
+        }
+        if(x%2==0)
+        {
+            if(even==odd)
+            {
+                cout<<(temp+1)/2 br;
+            }
+            else
+            {
+                cout<<"-1" br;
+            }
+        }
+        else
+        {
+            if(even==odd+1)
+            {
+                cout<<(temp+1)/2 br;
+            }
+            else
+            {
+                cout<<"-1" br;
+            }
+        }
+    }
+    return 0;
+}
+ 
