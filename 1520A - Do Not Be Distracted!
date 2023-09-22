@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    fastio
+    int t,a,i,j,count=0,temp=0;
+    string ra;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>ra;
+        For(i,a)
+        {
+            temp=0;
+            count=0;
+            Forran(j,i+1,a)
+            {
+                if(ra[i]!=ra[j])
+                    temp=1;
+                if(temp && ra[i]==ra[j])
+                {
+                    count=1;
+                    break;
+                }
+            }
+            if(count)
+                break;
+        }
+        if(count==0)
+        {
+            cout<<"Yes" br;
+        }
+        else
+        {
+            cout<<"No" br;
+        }
+    }
+    return 0;
+}
