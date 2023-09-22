@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define br <<"\n";
+#define for(i,n) for(i=0;i<n;i++)
+using namespace std;
+int main()
+{
+    int sum=0,ra[4],l,i;
+    string sa;
+    cin>>ra[0]>>ra[1]>>ra[2]>>ra[3]>>sa;
+    l=sa.length();
+    for(i,l){
+        sum+=ra[sa[i]-'1'];
+    }
+    cout<<sum;
+    return 0;
+}
