@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    int t,xa,xb,xc,ya,yb,yc,x,y;
+    cin>>t;
+    while(t--)
+    {
+        x=0;
+        y=0;
+        cin>>xa>>ya>>xb>>yb>>xc>>yc;
+        if((xa-xb>=0 && xa-xc>=0)||(xa-xb<=0 && xa-xc<=0)){
+            x=min(abs(xa-xb),abs(xa-xc));
+        }
+        if((ya-yb>=0 && ya-yc>=0)||(ya-yb<=0 && ya-yc<=0)){
+            y=min(abs(ya-yb),abs(ya-yc));
+        }
+        cout<<x+y+1 br;
+    }
+    return 0;
+}
