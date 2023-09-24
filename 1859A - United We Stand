@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    int t,n,i,maxx,minn,temp,a;
+    cin>>t;
+    vector<int>v;
+    while(t--)
+    {
+        temp=0;
+        maxx=0;
+        minn=1000000000;
+        v.clear();
+        cin>>n;
+        For(i,n)
+        {
+            cin>>a;
+            v.push_back(a);
+            maxx=max(maxx,a);
+            minn=min(minn,a);
+        }
+        sort(v.begin(),v.end());
+        if(maxx==minn){
+            cout<<"-1" br;
+        }
+        else{
+            Forrev(i,n)
+            {
+                if(v[i]==maxx){
+                    temp++;
+                }
+                else{
+                    break;
+                }
+            }
+            cout<<n-temp<<" "<<temp br;
+            For(i,n-temp){
+                cout<<v[i]<<" ";
+            }
+            cout br;
+            Forran(i,n-temp,n){
+                cout<<v[i]<<" ";
+            }
+            cout br;
+        }
+    }
+    return 0;
+}
