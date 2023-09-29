@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    fastio
+    int t,i,j,sum;
+    string ra[10];
+    cin>>t;
+    while(t--)
+    {
+        sum=0;
+        For(i,10){
+            cin>>ra[i];
+        }
+        For(i,10){
+            For(j,10){
+                if(ra[i][j]=='X'){
+                    if(i==0 || i==9 || j==0 || j==9)
+                        sum++;
+                    else if(i==1 || i==8 || j==1 || j==8)
+                        sum+=2;
+                    else if(i==2 || i==7 || j==2 || j==7)
+                        sum+=3;
+                    else if(i==3 || i==6 || j==3 || j==6)
+                        sum+=4;
+                    else
+                        sum+=5;
+                }
+            }
+        }
+        cout<<sum br;
+    }
+    return 0;
+}
