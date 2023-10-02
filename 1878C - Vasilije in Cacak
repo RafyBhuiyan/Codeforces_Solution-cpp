@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define vec vector<int>
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    fastio
+    vec v;
+    ll a,n,k,temp,t,x,y,i;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>k>>x;
+        if(n==k){
+            if(x==(n*(n+1))/2){
+                cout<<"YES" br;
+            }
+            else{
+                cout<<"NO" br;
+            }
+        }
+        else{
+            if(x<(n*(n+1))/2 && (k*(k+1))/2<=x){
+                if(((n*(n+1))/2)-(((n-k)*(n-k+1))/2)>=x){
+                    cout<<"YES" br;
+                }
+                else{
+                    cout<<"NO" br;
+                }
+            }
+            else{
+                cout<<"NO" br;
+            }
+        }
+    }
+    return 0;
+}
