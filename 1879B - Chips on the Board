@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n"
+#define vec vector<int>
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    fastio
+    ll t,x,min1,min2,sum1,sum2,a,n;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        sum1=0;
+        sum2=0;
+        min1=10000000000;
+        min2=10000000000;
+        x=n;
+        while(x--){
+            cin>>a;
+            min1=min(min1,a);
+            sum1+=a;
+        }
+        x=n;
+        while(x--){
+            cin>>a;
+            min2=min(min2,a);
+            sum2+=a;
+        }
+        cout<<min(n*min1 + sum2,n*min2 + sum1) br;
+    }
+    return 0;
+}
