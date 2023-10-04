@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define vecint vector<int>
+#define vecstring vector<string>
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+bool isprime(const ll n)
+{
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+    if (n % 2 == 0 or n % 3 == 0)
+        return false;
+    for (ll i = 5; i * i <= n; i += 6)
+        if (n % i == 0 or n % (i + 2) == 0)
+            return false;
+    return true;
+}
+int gcd(int a,int b)
+{
+    while(a!=0)
+    {
+        if(a<b)
+            swap(a,b);
+        a=a%b;
+    }
+    return b;
+}
+int main()
+{
+    fastio
+    ll t,i,n,sum,a,mina,minb,x;
+    cin>>t;
+    vecint ra,sa;
+    while(t--)
+    {
+        mina=10000000000;
+        minb=10000000000;
+        sum=0;
+        ra.clear();
+        sa.clear();
+        cin>>n;
+        For(i,n)
+        {
+            cin>>a;
+            ra.push_back(a);
+            mina=min(mina,a);
+        }
+        For(i,n)
+        {
+            cin>>a;
+            sa.push_back(a);
+            minb=min(minb,a);
+        }
+        For(i,n)
+        {
+            if(ra[i]>mina && sa[i]>minb)
+            {
+                x=min(ra[i]-mina,sa[i]-minb);
+                sum+=x;
+                ra[i]-=x;
+                sa[i]-=x;
+            }
+            sum+=(ra[i]-mina);
+            sum+=(sa[i]-minb);
+        }
+        cout<<sum br;
+    }
+    return 0;
+}
