@@ -1,0 +1,97 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define vecint vector<int>
+#define vecstring vector<string>
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+bool isprime(const ll n)
+{
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+    if (n % 2 == 0 or n % 3 == 0)
+        return false;
+    for (ll i = 5; i * i <= n; i += 6)
+        if (n % i == 0 or n % (i + 2) == 0)
+            return false;
+    return true;
+}
+int gcd(int a,int b)
+{
+    while(a!=0)
+    {
+        if(a<b)
+            swap(a,b);
+        a=a%b;
+    }
+    return b;
+}
+int main()
+{
+    fastio
+    ll n,t,x,temp,y,i,a,b,m,j,count,sum;
+    pair<ll,ll>ra[10000],sa[10000];
+    cin>>t;
+    while(t--)
+    {
+        temp=0;
+        cin>>n;
+        m=n;
+        m--;
+        i=0;
+        cin>>a>>b;
+        while(m--)
+        {
+            cin>>x>>y;
+            ra[i].first  = x;
+            ra[i].second = y;
+            sa[i].first  = y;
+            sa[i].second = x;
+            i++;
+        }
+        sort(ra,ra+i);
+        sort(sa,sa+i);
+        count =0;
+        sum =0;
+        Forrev(j,i)
+        {
+            if((ra[j].first>=a && ra[j].second>=b)&& count==0)
+            {
+                temp=1;
+                break;
+            }
+            else if(ra[j].first<a)
+            {
+                count++;
+            }
+            if((sa[j].first>=b && sa[j].second>=a) &&sum==0)
+            {
+                temp=1;
+                break;
+            }
+            else if(sa[j].first<b )
+            {
+                sum++;
+            }
+            if(count==1 && sum==1)
+            {
+                break;
+            }
+        }
+        if(temp)
+        {
+            cout<<"-1" br;
+        }
+        else
+        {
+            cout<<a br;
+        }
+    }
+    return 0;
+}
