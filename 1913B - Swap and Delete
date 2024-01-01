@@ -1,0 +1,146 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n"
+#define no "NO"
+#define yes "YES"
+#define vecint vector<int>
+#define vecll vector<long long int>
+#define vecstring vector<string>
+#define push push_back
+#define decimal(n) cout<<fixed<<setprecision(n);
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrevran(i,n,a) for(int i=n-1;i>=a;i--)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define total(v) accumulate(v.begin(),v.end(),0)
+#define diff(ax,ay,bx,by) abs(ax-bx)+abs(ay-by)
+#define oneinbin(x) __builtin_popcount(x)
+#define distance(ax,ay,bx,by) pow((ax-bx)*(ax-bx)+(ay-by)*(ay-by),0.5)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+bool isprime(const ll n)
+{
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+    if (n % 2 == 0 or n % 3 == 0)
+        return false;
+    for (ll i = 5; i * i <= n; i += 6)
+        if (n % i == 0 or n % (i + 2) == 0)
+            return false;
+    return true;
+}
+int gcd(ll a,ll b)
+{
+    while(a!=0)
+    {
+        if(a<b)
+            swap(a,b);
+        a=a%b;
+    }
+    return b;
+}
+int lcm(ll a, ll b)
+{
+    return a*b/gcd(a,b);
+}
+bool descending(int x, int y)
+{
+    return x > y;
+}
+bool compare(pair<ll,ll>&a,pair<ll,ll>&b)
+{
+    return (a.first>b.first) || (a.first==b.first && a.second<b.second);
+}
+bool vecfind(vector<ll>ra,ll x)
+{
+    if(find(ra.begin(),ra.end(),x)!=ra.end())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+ll Bsearch()
+{
+    ll ans,l=0,r,mid;
+    while(l<=r)
+    {
+        mid=l+(r-l)/2;
+        if(1)
+        {
+            l=mid+1;
+            ans = mid;
+        }
+        else
+        {
+            r=mid-1;
+        }
+    }
+    return ans;
+}
+vector<ll> prime_list(ll N)
+{
+    vecll lp(N+1),pr;
+    for (ll i=2; i <= N; ++i)
+    {
+        if (lp[i] == 0)
+        {
+            lp[i] = i;
+            pr.push_back(i);
+        }
+        for (ll j = 0; i * pr[j] <= N; ++j)
+        {
+            lp[i * pr[j]] = pr[j];
+            if (pr[j] == lp[i])
+            {
+                break;
+            }
+        }
+    }
+    return pr;
+}
+int main()
+{
+    fastio
+    ll test,z,o,sum,x,y,l,i;
+    string ra;
+    for(cin>>test;test--;)
+    {
+        cin>>ws>>ra;
+        sum=0;
+        l=ra.length();
+        z = count(ra.begin(),ra.end(),'0');
+        o = l-z;
+        if(z==o)
+        {
+            cout<<0 br;
+        }
+        else
+        {
+            z=min(z,o);
+            o=min(z,o);
+            for(i=0;i<l;i++)
+            {
+                if(ra[i]=='0' && z)
+                {
+                    z--;
+                }
+                else if(ra[i]=='1' && o)
+                {
+                    o--;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            cout<<l-i br;
+        }
+    }
+    return 0;
+}
