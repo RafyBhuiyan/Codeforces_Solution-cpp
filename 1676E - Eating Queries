@@ -1,0 +1,163 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n"
+#define no "NO"
+#define yes "YES"
+#define vecint vector<int>
+#define vecll vector<long long int>
+#define vecstring vector<string>
+#define push push_back
+#define decimal(n) cout<<fixed<<setprecision(n);
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrevran(i,n,a) for(ll i=n;i>=a;i--)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define total(v) accumulate(v.begin(),v.end(),0)
+#define diff(ax,ay,bx,by) abs(ax-bx)+abs(ay-by)
+#define oneinbin(x) __builtin_popcount(x)
+#define distance(ax,ay,bx,by) pow((ax-bx)*(ax-bx)+(ay-by)*(ay-by),0.5)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+bool isprime(const ll n)
+{
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+    if (n % 2 == 0 or n % 3 == 0)
+        return false;
+    for (ll i = 5; i * i <= n; i += 6)
+        if (n % i == 0 or n % (i + 2) == 0)
+            return false;
+    return true;
+}
+int gcd(ll a,ll b)
+{
+    while(a!=0)
+    {
+        if(a<b)
+            swap(a,b);
+        a=a%b;
+    }
+    return b;
+}
+int lcm(ll a, ll b)
+{
+    return a*b/gcd(a,b);
+}
+bool descending(int x, int y)
+{
+    return x > y;
+}
+bool compare(pair<ll,ll>&a,pair<ll,ll>&b)
+{
+    return (a.first>b.first) || (a.first==b.first && a.second<b.second);
+}
+bool vecfind(vector<ll>ra,ll x)
+{
+    if(find(ra.begin(),ra.end(),x)!=ra.end())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+ll Bsearch(vector<ll>&ra,ll n,ll k)
+{
+    ll ans,l=0,r=n,mid;
+    while(l<=r)
+    {
+        mid=l+(r-l)/2;
+        if(ra[mid]<k)
+        {
+            l=mid+1;
+        }
+        else
+        {
+            ans=mid;
+            r=mid-1;
+        }
+    }
+    return ans+1;
+}
+vector<bool> is_prime(10000000,true);
+void sieve()
+{
+    ll n=10000000;
+    //vecll ra;
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (is_prime[i])
+        {
+            //ra.push(i);
+            for (int j = i * i; j <= n; j += i)
+                is_prime[j] = false;
+        }
+    }
+}
+vector<ll> prime_list(ll N)
+{
+    vecll lp(N+1),pr;
+    for (ll i=2; i <= N; ++i)
+    {
+        if (lp[i] == 0)
+        {
+            lp[i] = i;
+            pr.push_back(i);
+        }
+        for (ll j = 0; i * pr[j] <= N; ++j)
+        {
+            lp[i * pr[j]] = pr[j];
+            if (pr[j] == lp[i])
+            {
+                break;
+            }
+        }
+    }
+    return pr;
+}
+int main()
+{
+    fastio
+    ll test,a,n,sum,k,c;
+    vecll ra;
+    for(cin>>test;test--;)
+    {
+        ra.clear();
+        cin>>n>>c;
+        For(i,n)
+        {
+            cin>>a;
+            ra.push(a);
+        }
+        sort(ra.begin(),ra.end(),descending);
+        sum=0;
+        For(i,n)
+        {
+            sum+=ra[i];
+            ra[i]=sum;
+        }
+        while(c--)
+        {
+            cin>>k;
+            if(k>sum)
+            {
+                cout<<-1 br;
+            }
+            else if(k==sum)
+            {
+                cout<<n br;
+            }
+            else
+            {
+                a = Bsearch(ra,n,k);
+                cout<<a br;
+            }
+        }
+    }
+    return 0;
+}
