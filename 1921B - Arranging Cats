@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>>
+using namespace std;
+#define ll long long
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+int main()
+{
+    fastio
+    ll test,n,a,cnt1,cnt2;
+    string ra,sa;
+    for(cin>>test;test--;)
+    {
+        cnt1=0;
+        cnt2=0;
+        cin>>n>>ws>>ra>>ws>>sa;
+        for(int i=0;i<n;i++)
+        {
+            if(ra[i]==sa[i])continue;
+            if(ra[i]>sa[i])
+                cnt1++;
+            else
+                cnt2++;
+        }
+        cout<<max(cnt1,cnt2)<<endl;
+    }
+    return 0;
+}
